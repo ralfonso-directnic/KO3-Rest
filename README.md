@@ -64,18 +64,35 @@ Default: FALSE
 Initializing Library
 =========
 
-`$Rest = Rest::instance('default');`
+Controller_Foo extends Controller_Rest
 
 Receiving Request
+
+You can use actions as normal
+
 =========
-    try
-    {
-      $Rest->process();
-    }
-    catch (Rest_Exception $e)
-    {
-      $Rest->respond($e->code, array('message', $e->message));
-    }
+
+  public function action_foo(){
+  
+  $object= new stdClass;
+  $code=200;
+  
+  $this->respond($object,$code);
+  
+  }
+
+HTTP Method Support
+
+As above you can define a method that will accept all versions of a call ie action_foo, you can also make method specific versions to handle different types (ie  update/create)
+
+=========
+
+	public function action_put_foo(){}
+	
+	public function action_post_foo(){}
+	
+
+This allows you to override the default and also keeps you from building massive switches in your methods to support different behavior (thought thats ok if you want to do so)	
 
 Authentication
 =========
