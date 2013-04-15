@@ -6,4 +6,4 @@
  * @author		Nicholas Curtis	<nich.curtis@gmail.com>
  */
 
-class Rest extends Kohana_Rest {}
+class Controller_Rest extends Kohana_Controller_Rest {}

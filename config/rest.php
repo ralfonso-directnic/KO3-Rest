@@ -8,7 +8,7 @@
 
 return array
 (
-	'sign_request'	=>	TRUE,
+	'sign_request'	=>	FALSE,
 
 	'signature'	=>	array
 	(
@@ -30,5 +30,5 @@ return array
 	),
 
 	'debug'			=>	50,
-	'profile'			=>	TRUE
+	'profile'			=>	FALSE
 );
